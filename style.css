@@ -1,42 +1,405 @@
-css
+/* Reset CSS Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Warna: Emas, Putih, Hitam untuk teks */
+    --color-gold: #C0A880; /* Emas yang lembut */
+    --color-white: #ffffff;
+    --color-black: #2c3e50;
+    --color-light-bg: #f5f5f5;
+    
+    /* Font */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background: #fffdf5;
-  color: #333;
+    font-family: var(--font-body);
+    color: var(--color-black);
+    line-height: 1.6;
+    background-color: var(--color-light-bg);
 }
 
-.cover, section {
-  text-align: center;
-  padding: 20px;
+/* --- Tombol Musik --- */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-h1, h2, h3 {
-  color: #a8832d;
+.music-btn:hover {
+    transform: scale(1.1);
 }
 
-button {
-  padding: 10px 20px;
-  background: #d4af37;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
+/* --- Section Styling Umum --- */
+.section {
+    padding: 80px 5%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--color-gold);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.section-subtitle {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Tombol Utama --- */
+.main-btn {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Untuk link */
+    display: inline-block;
+}
+
+.main-btn:hover {
+    background-color: #A38A66; /* Gold yang sedikit lebih gelap */
+}
+
+/* --- SECTION 1: Landing Page (Cover) --- */
+.cover-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('assets/cover.jpg') no-repeat center center/cover;
+    position: relative;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.cover-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay gelap */
+}
+
+.cover-content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.cover-page h1 {
+    font-family: var(--font-heading);
+    font-size: 4em;
+    margin: 10px 0;
+    color: var(--color-gold);
+}
+
+.cover-page p {
+    font-size: 1.2em;
+}
+
+.date-cover {
+    margin-bottom: 30px;
+}
+
+.guest-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--color-black);
+    padding: 15px 25px;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 300px;
+    border: 1px solid var(--color-gold);
+}
+
+.guest-box h2 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.8em;
+    margin-top: 5px;
+}
+
+/* Menyembunyikan konten utama */
 .hidden {
-  display: none;
+    display: none;
 }
 
-.galeri {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+/* --- SECTION 2: Pengantin & Sambutan --- */
+.couple-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
 }
-.galeri img {
-  width: 30%;
-  border-radius: 10px;
-  box-shadow: 0 0 5px #aaa;
+
+.bride, .groom {
+    max-width: 300px;
+}
+
+.bride h3, .groom h3 {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+}
+
+.ampersand {
+    font-family: var(--font-heading);
+    font-size: 3em;
+    color: var(--color-gold);
+}
+
+/* --- SECTION 3: Hitung Mundur --- */
+.countdown-section {
+    background-color: var(--color-white);
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.timer-box {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    padding: 15px;
+    border-radius: 8px;
+    width: 100px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.timer-box span {
+    display: block;
+    font-size: 2.5em;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* --- SECTION 4: Detail Acara --- */
+.event-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.event-box {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.icon-event {
+    font-size: 2.5em;
+    color: var(--color-gold);
+    margin-bottom: 15px;
+}
+
+.event-box h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+    color: var(--color-gold);
+}
+
+.map-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.map-title {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    color: var(--color-gold);
+    margin-bottom: 15px;
+}
+
+iframe {
+    border-radius: 8px;
+}
+
+.map-btn {
+    margin-bottom: 10px;
+}
+
+/* --- SECTION 5: Galeri Foto --- */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 300px; /* Tinggi tetap untuk konsistensi */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* --- SECTION 6: Ucapan & RSVP --- */
+.rsvp-section {
+    background-color: var(--color-white);
+}
+
+#rsvp-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border: 1px solid var(--color-gold);
+    border-radius: 10px;
+    text-align: left;
+}
+
+#rsvp-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--color-gold);
+}
+
+#rsvp-form input, #rsvp-form select, #rsvp-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-body);
+}
+
+#rsvp-form textarea {
+    resize: vertical;
+}
+
+#rsvp-form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.greetings-list {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.greetings-list h3 {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    margin-bottom: 20px;
+}
+
+.greeting-item {
+    border-left: 3px solid var(--color-gold);
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: var(--color-light-bg);
+    border-radius: 0 5px 5px 0;
+}
+
+.greeting-item strong {
+    color: var(--color-gold);
+}
+
+
+/* --- Footer --- */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: 0.9em;
+}
+
+/* --- Responsif (Mobile-Friendly) --- */
+@media (max-width: 768px) {
+    .section {
+        padding: 50px 5%;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .cover-page h1 {
+        font-size: 3em;
+    }
+
+    .cover-page p {
+        font-size: 1em;
+    }
+
+    .couple-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ampersand {
+        font-size: 2em;
+    }
+
+    .countdown-timer {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .timer-box {
+        width: 80px;
+        padding: 10px;
+    }
+
+    .timer-box span {
+        font-size: 2em;
+    }
 }
