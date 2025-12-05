@@ -1,95 +1,127 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aliya & Bambang</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Aliya & Bambang</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
-<!-- Musik -->
-<audio id="bg-music" loop autoplay>
-  <source src="audio/lagu.mp3" type="audio/mpeg">
-</audio>
-<button onclick="toggleMusic()">🔊 Musik</button>
-
-<!-- Galeri -->
-<section>
-  <h2>Galeri Prewedding</h2>
-  <div class="galeri">
-    <img src="images/foto1.jpg" alt="Foto 1" />
-    <img src="images/foto2.jpg" alt="Foto 2" />
-    <img src="images/foto3.jpg" alt="Foto 3" />
-  </div>
-</section>
-
 <body>
-  <div class="cover">
-    <h1>Aliya Miftahul Jannah & Bambang Priambodo</h1>
-    <p>Kepada Yth. <span id="tamu">Tamu Undangan</span></p>
-    <p>18 Januari 2026 | Auditorium Universitas PGRI Yogyakarta</p>
-    <button onclick="openInvitation()">Buka Undangan</button>
-  </div>
 
-  <div id="undangan" class="hidden">
-    <section>
-      <h2>Assalamu'alaikum Wr. Wb.</h2>
-      <p>Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk hadir pada pernikahan kami:</p>
-      <h3>Aliya Miftahul Jannah</h3>
-      <p>Putri dari Bpk. Fadjar Noer Hidayat & Ibu Susilawati</p>
-      <h3>&</h3>
-      <h3>Bambang Priambodo</h3>
-      <p>Putra dari Bpk. Sewarno (Alm) & Ibu Etty Mawarsih</p>
-      <p><strong>Hari/Tanggal:</strong> Minggu, 18 Januari 2026<br/>
-      <strong>Waktu:</strong> 10.00 WIB – selesai<br/>
-      <strong>Tempat:</strong> Auditorium Universitas PGRI Yogyakarta</p>
-    </section>
- countdown();
-};
+    <button id="music-toggle" class="music-btn"><i class="fas fa-play"></i></button>
+    <audio id="background-music" loop>
+        <source src="assets/background_music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
-function openInvitation() {
-  document.querySelector(".cover").style.display = "none";
-  document.getElementById("undangan").classList.remove("hidden");
-}
-
-// Countdown ke 18 Januari 2026
-function countdown() {
-  const target = new Date("2026-01-18T10:00:00").getTime();
-  const timer = setInterval(() => {
-    const now = new Date().getTime();
-    const gap = target - now;
-
-    if (gap < 0) {
-      document.getElementById("countdown").innerHTML = "Hari Bahagia Telah Tiba!";
-      clearInterval(timer);
-      return;
-    }
-
-    const days = Math.floor(gap / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((gap % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-      days hari{hours} jam minutes menit{seconds} detik;
-  }, 1000);
-}
- <section>
-      <h2>Hitung Mundur</h2>
-      <div id="countdown"></div>
+    <section id="cover-page" class="cover-page">
+        <div class="cover-content">
+            <p>The Wedding of</p>
+            <h1>Aliya & Bambang</h1>
+            <p class="date-cover">Minggu, 18 Januari 2026</p>
+            <div id="guest-name-box" class="guest-box">
+                <p>Kepada Yth:</p>
+                <h2 id="guest-name">Tamu Undangan</h2>
+            </div>
+            <button id="open-invitation-btn" class="main-btn">Buka Undangan</button>
+        </div>
     </section>
 
-    <section>
-      <h2>Lokasi Acara</h2>
-      <iframe src="https://www.google.com/maps?q=Auditorium+Universitas+PGRI+Yogyakarta&output=embed" width="100%" height="200" style="border:0;" allowfullscreen=""></iframe>
-    </section>
+    <main id="main-content" class="main-content hidden">
 
-    <section>
-      <h2>RSVP</h2>
-      <button onclick="alert('Terima kasih, konfirmasi Anda telah dicatat.')">Konfirmasi Kehadiran</button>
-    </section>
-  </div>
+        <section id="pengantin" class="section">
+            <h2 class="section-title">Bismillahirrahmanirrahim</h2>
+            <p class="section-subtitle">
+                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir." <br>(Q.S. Ar-Rum: 21)
+            </p>
+            <div class="couple-info">
+                <div class="bride">
+                    <h3>Aliya Miftahul Jannah</h3>
+                    <p>Putri dari Bapak Fadjar Noer Hidayat & Ibu Susilawati</p>
+                </div>
+                <span class="ampersand">&</span>
+                <div class="groom">
+                    <h3>Bambang Priambodo</h3>
+                    <p>Putra dari Bapak Suwarno (Alm.) & Ibu Etty Mawarsih</p>
+                </div>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <section id="countdown" class="section countdown-section">
+            <h2 class="section-title">Menuju Hari Bahagia</h2>
+            <div class="countdown-timer" id="countdown-timer">
+                <div class="timer-box"><span id="days">00</span> Hari</div>
+                <div class="timer-box"><span id="hours">00</span> Jam</div>
+                <div class="timer-box"><span id="minutes">00</span> Menit</div>
+                <div class="timer-box"><span id="seconds">00</span> Detik</div>
+            </div>
+        </section>
+
+        <section id="detail-acara" class="section">
+            <h2 class="section-title">Detail Acara</h2>
+            <div class="event-details">
+                <div class="event-box">
+                    <i class="fas fa-ring icon-event"></i>
+                    <h3>Akad Nikah</h3>
+                    <p>Minggu, 18 Januari 2026</p>
+                    <p>Pukul 10.00 WIB - Selesai</p>
+                    <p>Auditorium Universitas PGRI Yogyakarta</p>
+                </div>
+                </div>
+
+            <div class="map-container">
+                <h3 class="map-title">Lokasi Acara</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.111831885065!2d110.39575037500336!3d-7.777083092237803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a591e1d3e8749%3A0x1d4d82f7336f784e!2sUniversitas%20PGRI%20Yogyakarta%20(UPY)!5e0!3m2!1sid!2sid!4f13.1"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+                <a href="https://maps.app.goo.gl/ContohLinkGoogleMaps" target="_blank" class="main-btn map-btn">Lihat di Google Maps</a>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <h2 class="section-title">Galeri Foto Prewedding</h2>
+            <div class="photo-gallery">
+                <img src="assets/gallery1.jpg" alt="Foto Prewedding 1">
+                <img src="assets/gallery2.jpg" alt="Foto Prewedding 2">
+                <img src="assets/gallery3.jpg" alt="Foto Prewedding 3">
+                </div>
+        </section>
+
+        <section id="rsvp" class="section rsvp-section">
+            <h2 class="section-title">Kirim Ucapan & RSVP</h2>
+            <form id="rsvp-form">
+                <label for="nama">Nama Anda:</label>
+                <input type="text" id="nama" required>
+                
+                <label for="hadir">Konfirmasi Kehadiran:</label>
+                <select id="hadir" required>
+                    <option value="">Pilih...</option>
+                    <option value="hadir">Inshaa Allah Hadir</option>
+                    <option value="tidak-hadir">Mohon Maaf Tidak Hadir</option>
+                </select>
+
+                <label for="jumlah">Jumlah Kehadiran (Orang):</label>
+                <input type="number" id="jumlah" min="1" value="1" required>
+
+                <label for="ucapan">Ucapan Selamat:</label>
+                <textarea id="ucapan" rows="4" required></textarea>
+
+                <button type="submit" class="main-btn">Kirim</button>
+            </form>
+
+            <div id="greetings-list" class="greetings-list">
+                <h3>Ucapan dari Tamu</h3>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aliya & Bambang Wedding. Dibuat dengan cinta.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
