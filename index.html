@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aliya & Bambang</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Musik -->
+<audio id="bg-music" loop autoplay>
+  <source src="audio/lagu.mp3" type="audio/mpeg">
+</audio>
+<button onclick="toggleMusic()">🔊 Musik</button>
+
+<!-- Galeri -->
+<section>
+  <h2>Galeri Prewedding</h2>
+  <div class="galeri">
+    <img src="images/foto1.jpg" alt="Foto 1" />
+    <img src="images/foto2.jpg" alt="Foto 2" />
+    <img src="images/foto3.jpg" alt="Foto 3" />
+  </div>
+</section>
+
+<body>
+  <div class="cover">
+    <h1>Aliya Miftahul Jannah & Bambang Priambodo</h1>
+    <p>Kepada Yth. <span id="tamu">Tamu Undangan</span></p>
+    <p>18 Januari 2026 | Auditorium Universitas PGRI Yogyakarta</p>
+    <button onclick="openInvitation()">Buka Undangan</button>
+  </div>
+
+  <div id="undangan" class="hidden">
+    <section>
+      <h2>Assalamu'alaikum Wr. Wb.</h2>
+      <p>Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk hadir pada pernikahan kami:</p>
+      <h3>Aliya Miftahul Jannah</h3>
+      <p>Putri dari Bpk. Fadjar Noer Hidayat & Ibu Susilawati</p>
+      <h3>&</h3>
+      <h3>Bambang Priambodo</h3>
+      <p>Putra dari Bpk. Sewarno (Alm) & Ibu Etty Mawarsih</p>
+      <p><strong>Hari/Tanggal:</strong> Minggu, 18 Januari 2026<br/>
+      <strong>Waktu:</strong> 10.00 WIB – selesai<br/>
+      <strong>Tempat:</strong> Auditorium Universitas PGRI Yogyakarta</p>
+    </section>
+ countdown();
+};
+
+function openInvitation() {
+  document.querySelector(".cover").style.display = "none";
+  document.getElementById("undangan").classList.remove("hidden");
+}
+
+// Countdown ke 18 Januari 2026
+function countdown() {
+  const target = new Date("2026-01-18T10:00:00").getTime();
+  const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const gap = target - now;
+
+    if (gap < 0) {
+      document.getElementById("countdown").innerHTML = "Hari Bahagia Telah Tiba!";
+      clearInterval(timer);
+      return;
+    }
+
+    const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      days hari{hours} jam minutes menit{seconds} detik;
+  }, 1000);
+}
+ <section>
+      <h2>Hitung Mundur</h2>
+      <div id="countdown"></div>
+    </section>
+
+    <section>
+      <h2>Lokasi Acara</h2>
+      <iframe src="https://www.google.com/maps?q=Auditorium+Universitas+PGRI+Yogyakarta&output=embed" width="100%" height="200" style="border:0;" allowfullscreen=""></iframe>
+    </section>
+
+    <section>
+      <h2>RSVP</h2>
+      <button onclick="alert('Terima kasih, konfirmasi Anda telah dicatat.')">Konfirmasi Kehadiran</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
