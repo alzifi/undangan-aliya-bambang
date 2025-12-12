@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Aliya & Bambang</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <audio id="background-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg"> 
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-toggle" class="music-toggle"><i class="fas fa-play"></i></button>
+
+    <div id="landing-page" class="section landing-page">
+        <div class="overlay"></div>
+        <div class="content">
+            <p>The Wedding of</p>
+            <h1>Aliya <span class="amp">&</span> Bambang</h1>
+            <p class="date-landing">Minggu, 18 Januari 2026</p>
+            
+            <div id="to-guest" class="to-guest-box">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h2 id="guest-name">[Nama Tamu]</h2>
+            </div>
+
+            <button id="open-invitation" class="btn primary-btn">Buka Undangan</button>
+        </div>
+    </div>
+
+    <main id="main-content" class="hidden">
+        <nav id="main-nav" class="main-nav hidden">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#event-info">Acara</a></li>
+                <li><a href="#location">Lokasi</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#greetings-rsvp">Ucapan</a></li>
+            </ul>
+        </nav>
+
+        <section id="header" class="section header-section">
+            <p class="greeting">We Are Getting Married</p>
+            <h2>Aliya & Bambang</h2>
+            <div id="countdown" class="countdown">
+                <div class="countdown-item"><span id="days">00</span>Hari</div>
+                <div class="countdown-item"><span id="hours">00</span>Jam</div>
+                <div class="countdown-item"><span id="minutes">00</span>Menit</div>
+                <div class="countdown-item"><span id="seconds">00</span>Detik</div>
+            </div>
+        </section>
+
+        <section id="event-info" class="section event-info-section">
+            <h3>Pernikahan Suci</h3>
+            <p class="intro-text">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.</p>
+
+            <div class="event-card">
+                <h4>Akad & Resepsi</h4>
+                <p class="date-time">Sabtu, 18 Januari 2025</p>
+                <p class="time">10.00 WIB - Selesai</p>
+                <p class="location-name">Auditorium Universitas PGRI Yogyakarta</p>
+                <p class="address">Jl. PGRI I, Sonosewu, Ngestiharjo, Kec. Kasihan, Bantul, DIY</p>
+                <a href="https://www.google.com/maps/place/Auditorium+Universitas+PGRI+Yogyakarta/@-7.806437,110.34096,872m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2e7a57fac07957d9:0xa6bb313d4068f3ba!8m2!3d-7.806437!4d110.34096!16s%2Fg%2F11cjhrw5bx?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn map-btn"><i class="fas fa-map-marker-alt"></i> Lihat Lokasi di Google Maps</a>
+            </div>
+        </section>
+
+        <section id="location" class="section location-section">
+            <h3>Lokasi Acara</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.4350954740885!2d110.34096!3d-7.806436999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57fac07957d9%3A0xa6bb313d4068f3ba!2sAuditorium%20Universitas%20PGRI%20Yogyakarta!5e1!3m2!1sid!2sid!4v1765157453217!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section id="gallery" class="section gallery-section">
+            <h3>Galeri Prewedding</h3>
+            <div class="photo-grid">
+                <img src="assets/gallery1.jpg" alt="Foto Prewedding 1"> 
+                <img src="assets/gallery2.jpg" alt="Foto Prewedding 2">
+                <img src="assets/gallery3.jpg" alt="Foto Prewedding 3">
+            </div>
+        </section>
+
+        <section id="greetings-rsvp" class="section greetings-rsvp-section">
+            <h3>Berikan Ucapan & Konfirmasi Kehadiran</h3>
+            
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="name">Nama Anda:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Konfirmasi Kehadiran:</label>
+                    <select id="status" required>
+                        <option value="">-- Pilih --</option>
+                        <option value="Hadir">Insya Allah Hadir</option>
+                        <option value="Tidak Hadir">Mohon Maaf Tidak Hadir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ucapan & Doa:</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">Kirim Ucapan</button>
+            </form>
+
+            <div id="greetings-list">
+                <h4>Ucapan Terbaru:</h4>
+                </div>
+        </section>
+    
+    </main>
+
+    <footer class="footer-section hidden">
+        <p>&copy; 2024 Aliya & Bambang. Wedding Invitation.</p>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>

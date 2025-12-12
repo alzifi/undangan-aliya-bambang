@@ -1,0 +1,437 @@
+/* RESET & FONT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #8B735B; /* Soft Gold/Bronze */
+    --color-secondary: #F7E7D9; /* Off-White/Cream */
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+    --color-background: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-background);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* GLOBAL STYLES */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 15px;
+    border: 2px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+}
+
+.primary-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+/* LANDING PAGE */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/cover.jpg'); /* Ganti dengan gambar cover Anda */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--color-text-light);
+}
+
+.landing-page .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Efek gelap */
+}
+
+.landing-page .content {
+    z-index: 10;
+}
+
+.landing-page h1 {
+    color: var(--color-secondary);
+    font-size: 5em;
+    margin: 0 0 10px 0;
+}
+
+.landing-page .amp {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.landing-page .date-landing {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.to-guest-box {
+    margin: 30px auto;
+    padding: 15px;
+    border: 1px solid var(--color-secondary);
+    max-width: 350px;
+}
+
+.to-guest-box p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.to-guest-box h2 {
+    color: var(--color-secondary);
+    font-size: 1.8em;
+    margin: 5px 0 0 0;
+    word-wrap: break-word; /* Untuk nama tamu yang panjang */
+}
+
+
+/* MUSIC TOGGLE */
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* HEADER SECTION (Main) */
+.header-section {
+    background-color: var(--color-secondary);
+    padding-top: 80px;
+}
+
+.header-section .greeting {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: var(--color-text-dark);
+}
+
+/* COUNTDOWN */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--color-primary);
+    width: 80px;
+}
+
+.countdown-item span {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* EVENT INFO */
+.event-info-section {
+    background-color: var(--color-background);
+}
+
+.intro-text {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.event-card {
+    border: 1px solid var(--color-primary);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 450px;
+    background-color: var(--color-secondary);
+}
+
+.event-card h4 {
+    font-size: 1.5em;
+}
+
+.date-time, .time, .location-name {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.map-btn {
+    border-color: var(--color-text-dark);
+    color: var(--color-text-dark);
+}
+.map-btn:hover {
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
+}
+
+/* LOCATION MAP */
+.location-section {
+    background-color: var(--color-secondary);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: 20px auto;
+    border: 2px solid var(--color-primary);
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* GALLERY */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid var(--color-secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* GREETINGS & RSVP */
+.greetings-rsvp-section {
+    background-color: var(--color-background);
+}
+
+#rsvp-form {
+    max-width: 400px;
+    margin: 20px auto 40px;
+    padding: 30px;
+    border: 1px solid var(--color-primary);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: var(--font-body);
+}
+
+#greetings-list {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#greetings-list h4 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: var(--color-text-dark);
+}
+
+.greeting-item {
+    border: 1px solid #f0f0f0;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: var(--color-secondary);
+    font-size: 0.9em;
+}
+
+.greeting-item strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 3px;
+    font-family: var(--font-heading);
+    font-size: 1.1em;
+}
+
+.status-tag {
+    font-size: 0.8em;
+    font-style: italic;
+    color: green;
+}
+
+/* FOOTER */
+.footer-section {
+    padding: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
+/* RESPONSIVE DESIGN (Mobile Friendly) */
+@media (max-width: 600px) {
+    .section {
+        padding: 40px 15px;
+    }
+
+    .landing-page h1 {
+        font-size: 3.5em;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .countdown-item {
+        width: 70px;
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .countdown-item span {
+        font-size: 1.5em;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
+    }
+
+    .music-toggle {
+        width: 35px;
+        height: 35px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+/* --- NAVIGASI STYLES (Tambahan Baru) --- */
+
+.main-nav {
+    position: sticky; /* Membuat menu tetap di atas saat scroll */
+    top: 0;
+    z-index: 50;
+    background-color: rgba(255, 255, 255, 0.95); /* Putih semi-transparan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    font-weight: 500;
+    padding: 5px 10px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* RESPONSIVE NAVIGASI */
+@media (max-width: 600px) {
+    .main-nav ul {
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .main-nav a {
+        font-size: 0.8em;
+        padding: 5px;
+    }
+}
